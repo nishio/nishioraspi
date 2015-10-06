@@ -24,7 +24,9 @@ while True:
 	i = int(s.strip())
 	v = Value()
 	v.value = i
-	app.create(v)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            app.create(v)
 	print i
     except Exception, e:
         print e
